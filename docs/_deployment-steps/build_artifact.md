@@ -28,11 +28,11 @@ Add the following task to ``deployment.yaml``:
 ### Building Python wheels
 Takeoff will use your `setup.py` to build the python wheel. Therefore, it assumes this `setup.py` is valid and contains all necessary dependencies. As with other steps, Takeoff manages the version number used, based on the git branch/tag for which the CI build is taking place. In this case, you should have a file `version.py` in the root of your project, that contains:
 ```python
-__version__ = 'ANYTHING_HERE'
+__version__ = '1.0.0'
 ``` 
 This file should then be referenced in your `setup.py` as follows:
 ```python
-from version import __version__
+from setup import __version__
 setup(
   ...
   version=__version__
