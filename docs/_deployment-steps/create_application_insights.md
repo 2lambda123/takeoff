@@ -48,8 +48,8 @@ azure:
 To use a service principal, you can add the following into your `deployment.yaml`:
 ```yaml
 - task: create_application_insights
-  credentials: azure_keyvault
-  credentials_type: service_principal
+  credentials: github_actions
+  credentials_type: token
 ```
 
 If you prefer to use an Active Directory User, please ensure the following `keyvault_keys` are defined:
