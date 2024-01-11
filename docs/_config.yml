@@ -2,7 +2,7 @@ name: Schiphol Takeoff
 
 project:
   version: 2.0.5
-  github: https://github.com/schipholgroup/takeoff
+  github: https://github.com/2lambda123/takeoff
 
 markdown: kramdown
 
@@ -13,12 +13,12 @@ collections:
 links:
   header:
   - title: GitHub
-    url: https://github.com/schipholgroup/takeoff
+    url: https://github.com/2lambda123/takeoff
   footer:
   - title: GitHub
     url: https://github.com/schipholgroup/takeoff
   - title: Issues
-    url: https://github.com/schipholgroup/takeoff/issues
+    url: https://github.com/2lambda123/takeoff/issues
 
 ui:
   header:
