@@ -15,8 +15,8 @@ This will build a Python wheel (`.whl`) or SBT jar (`.jar`).
 Add the following task to ``deployment.yaml``:
 
 ```yaml
-- task: build_artifact
-  build_tool: python 
+- name: Build Artifact
+  run: python 
 ```
 
 {:.table}
@@ -48,6 +48,6 @@ Takeoff will use your `build.sbt` to build an assembly jar. This means that the 
 Example for building an SBT assembly jar. 
 ```
 steps:
-- task: build_artifact
-  build_tool: sbt
+- name: Build Artifact
+  run: sbt
 ```
