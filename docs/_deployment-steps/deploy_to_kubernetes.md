@@ -63,6 +63,7 @@ spec:
       containers:
       - name: my-app
         image: my-docker-image:{{docker_tag}}
+  kubernetes_config_path: YOUR-KUBERNETES-CONFIG-PATH.yml.j2
         imagePullPolicy: {{secret_pull_policy}}
         ports:
         - containerPort: 8443
@@ -166,6 +167,13 @@ Make sure `.takeoff/config.yml` contains the following keys:
 azure:
   kubernetes_naming: "my_kubernetes{env}"
   keyvault_keys:
+    service_principal:
+      client_id: "sp-client-id"
+      secret: "sp-secret"
+      tenant: "azure-tenant"
+    active_directory_user:
+      username: "aad-username"
+      password: "aad-password"
     active_directory_user:
       username: "aad-username"
       password: "aad-password"
@@ -192,8 +200,8 @@ Minimum Takeoff deployment configuration example to deploy Kubernetes resources.
 steps:
 - task: deploy_to_kubernetes
   credentials: azure_keyvault
-  credentials_type: active_directory_user
-  kubernetes_config_path: my_kubernetes_config.yml.j2
+  credentials_type: service_principal
+  kubernetes_config_path: YOUR-KUBERNETES-CONFIG-PATH.yml.j2
   image_pull_secret: 
     create: False
 ```

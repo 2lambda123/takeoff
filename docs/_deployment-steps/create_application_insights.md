@@ -48,7 +48,7 @@ azure:
 To use a service principal, you can add the following into your `deployment.yaml`:
 ```yaml
 - task: create_application_insights
-  credentials: azure_keyvault
+  credentials: YOUR-AZURE-KEYVAULT
   credentials_type: service_principal
 ```
 
