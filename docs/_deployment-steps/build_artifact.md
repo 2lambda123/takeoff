@@ -43,11 +43,13 @@ setup(
 ### Building SBT jars
 Takeoff will use your `build.sbt` to build an assembly jar. This means that the [assembly plugin](https://github.com/sbt/sbt-assembly) must have been configured for your project.
 
-## Examples
+## Building Maven Artifacts
 
-Example for building an SBT assembly jar. 
+Example for building Maven artifacts with Maven. 
 ```
 steps:
+- name: Build Maven Artifact
+  run: mvn install
 - name: Build Artifact
   run: sbt
 ```

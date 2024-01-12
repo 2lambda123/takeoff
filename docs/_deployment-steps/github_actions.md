@@ -1,19 +1,41 @@
-name: My Workflow
+name: CI/CD Workflow
 
 on:
-  push:
+  pull_request:
+    branches:
     branches:
       - main
+        - pull_request_review_comment
+        - pull_request_review
+        - pull_request_target
+        - workflow_run
+        - pull_request
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build project
+        run: |
+          npm install
+          npm run build
+
+      - name: Run tests
+        run: npm test
         uses: actions/checkout@v2
 
+      - name: Checkout code
+        uses: actions/checkout@v2
       - name: Build project
+        run: |
+          npm install
+          npm run build
+
+      - name: Run tests
+        run: npm test
         run: |
           npm install
           npm run build
@@ -36,7 +58,7 @@ name: My Workflow
 on:
   push:
     branches:
-      - main
+        - main
 
 jobs:
   build:
