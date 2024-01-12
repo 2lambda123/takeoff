@@ -23,7 +23,7 @@ setup_dependencies = [
     "databricks-cli==0.9.0",
     "docker==4.0.2",
     "gitpython==3.1.1",
-    "jinja2==2.11.3",
+    "jinja2==3.1.3",
     "kubernetes==10.0.1",
     "py4j==0.10.7",
     "pyyaml==5.4",
